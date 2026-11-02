@@ -87,7 +87,10 @@ chmod +x vm-orchestrator-api
 
 echo "Downloading vm-orchestrator-ui..."
 mkdir -p runtime/resources/ui
-curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" https://api.github.com/repos/OWNER/REPO/tarball/main | tar -xz -C runtime/resources/ui --strip-components=2 '*/dist'
+curl -fsSL \
+    -H "Authorization: Bearer $GITHUB_TOKEN" \
+    -H "Accept: application/vnd.github+json" \
+    https://api.github.com/repos/jsancarl/vm-orchestrator-ui/tarball/main | tar -xz -C runtime/resources/ui --strip-components=2 '*/dist'
 
 echo ""
 echo "Done. Run the API as root from the directory it is installed in: ./vm-orchestrator-api"
