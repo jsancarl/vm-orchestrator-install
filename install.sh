@@ -90,7 +90,7 @@ mkdir -p runtime/resources/ui
 curl -fsSL \
     -H "Authorization: Bearer $GITHUB_TOKEN" \
     -H "Accept: application/vnd.github+json" \
-    https://api.github.com/repos/jsancarl/vm-orchestrator-ui/tarball/main | tar -xz -C runtime/resources/ui --strip-components=2 '*/dist'
+    https://api.github.com/repos/jsancarl/vm-orchestrator-ui/tarball/main | tar -xz -C runtime/resources/ui --strip-components=2 --wildcards '*/dist'
 
 echo ""
 echo "Done. Run the API as root from the directory it is installed in: ./vm-orchestrator-api"
